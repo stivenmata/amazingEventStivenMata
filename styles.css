@@ -20,13 +20,16 @@
   width: 50px;
 }
 .card{
-    height: 250px;
-    width: 500px;
+    
+    width: 300px;
 }
 
 .body{
     background-color: rgb(190, 175, 151);
 }
-.card-img{
-    width: 500px;
+.card-cinema{
+    
+width: 800px !important;
+    object-fit: cover;
+   
 }
