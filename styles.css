@@ -1,0 +1,32 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+.nav{
+    background-color: gray;
+}
+.logo{
+    height: 30px;
+}
+.d-item{
+    height: 300px;
+
+}
+.d-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+.footer-img{
+  width: 50px;
+}
+.card{
+    height: 250px;
+    width: 500px;
+}
+
+.body{
+    background-color: rgb(190, 175, 151);
+}
+.card-img{
+    width: 500px;
+}
