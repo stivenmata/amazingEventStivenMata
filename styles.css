@@ -19,10 +19,35 @@
 .footer-img{
   width: 50px;
 }
-.card{
+
+.card {
+    height: 100%;
+   
+  }
+  
+  .card-img-top {
+    height: 200px; 
+    object-fit: cover;
+  }
+  
+  .card-body {
     
-    width: 300px;
-}
+    flex-grow: 1;
+  }
+  
+  .card-body .card-text {
+    flex-grow: 1;
+  }
+  
+  .card-body .d-flex {
+    margin-top: auto; 
+  }
+  
+  .card-width {
+    max-width: 18rem; 
+  }
+  
+  
 
 .body{
     background-color: rgb(190, 175, 151);
