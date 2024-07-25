@@ -82,10 +82,9 @@
     </button>
   </div>
 
-  <div class="container-fluid">
-    <div class="d-flex flex-wrap justify-content-between  align-items-center p-2 p-md-4">
-      <div class="d-flex flex-wrap flex-md-row">
-
+  <div class="container-fluid d-flex flex-wrap">
+    <div class="d-flex flex-wrap justify-content-between align-items-center p-2 p-md-4">
+      <div class="d-flex flex-wrap flex-md-row flex-column">
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
           <label class="form-check-label" for="inlineCheckbox1">Food Fair</label>
@@ -115,31 +114,27 @@
           <label class="form-check-label" for="inlineCheckbox7">Let's go to the cinema</label>
         </div>
       </div>
-
+  
       <div>
-
-        <div class="col-md-10 mx-auto">
-          <div class="input-group">
-            <input class="form-control border-end-0 border rounded-pill" type="search" value="search"
-              id="example-search-input">
-            <span class="input-group-append">
-              <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5"
-                type="button">
-                <i class="bi bi-search"></i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                </svg>
-              </button>
-            </span>
+        <div class="container my-3">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+              <div class="input-group rounded-pill">
+                <input class="form-control border-end-0 rounded-pill" type="search" placeholder="Buscar" id="example-search-input">
+                <button class="btn btn-outline-secondary border-0 rounded-pill ms-n5" type="button">
+                  <i class="bi bi-search"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
+  
   <main>
 
     <div id="cards-container"  class="container-fluid d-flex flex-wrap justify-content-center"></div>
