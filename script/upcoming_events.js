@@ -1,217 +1,274 @@
 const data = {
-    currentDate: "2023-01-01",
-    events: [
-      {
-        _id: "639c723b992482e5f2834be9",
-        name: "Collectivities Party",
-        image: "https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg",
-        date: "2022-12-12",
-        description: "Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
-        category: "Food Fair",
-        place: "Room A",
-        capacity: 45000,
-        assistance: 42756,
-        price: 5,
-        __v: 0,
-      },
-      {
-        _id: "639c723b992482e5f2834beb",
-        name: "Korean style",
-        image: "https://i.postimg.cc/ZmD3Xf57/Korean-style.jpg",
-        date: "2023-08-12",
-        description: "Enjoy the best Korean dishes, with international chefs and awesome events.",
-        category: "Food Fair",
-        place: "Room A",
-        capacity: 45000,
-        price: 10,
-        __v: 0,
-        estimate: 42756,
-      },
-      {
-        _id: "639c723c992482e5f2834bed",
-        name: "Jurassic Park",
-        image: "https://i.postimg.cc/GmHRkbNV/Jurassic-Park.jpg",
-        date: "2022-11-02",
-        description: "Let's go meet the biggest dinosaurs in the paleontology museum.",
-        category: "Museum",
-        place: "Field",
-        capacity: 82000,
-        price: 15,
-        __v: 0,
-        assistance: 65892,
-      },
-      {
-        _id: "639c723c992482e5f2834bef",
-        name: "Parisian Museum",
-        image: "https://i.postimg.cc/c4C2zXm8/Parisian-Museum.jpg",
-        date: "2023-11-02",
-        description: "A unique tour in the city of lights, get to know one of the most iconic places.",
-        category: "Museum",
-        place: "Paris",
-        capacity: 8200,
-        estimate: 8200,
-        price: 3500,
-        __v: 0,
-      },
-      {
-        _id: "639c723c992482e5f2834bf1",
-        name: "Comicon",
-        image: "https://i.postimg.cc/KYD0jMf2/comicon.jpg",
-        date: "2022-02-12",
-        description: "For comic lovers, all your favourite characters gathered in one place.",
-        category: "Costume Party",
-        place: "Room C",
-        capacity: 120000,
-        assistance: 110000,
-        price: 54,
-        __v: 0,
-      },
-      {
-        _id: "639c723c992482e5f2834bf3",
-        name: "Halloween Night",
-        image: "https://i.postimg.cc/RZ9fH4Pr/halloween.jpg",
-        date: "2023-02-12",
-        description: "Come with your scariest costume and win incredible prizes.",
-        category: "Costume Party",
-        place: "Room C",
-        capacity: 12000,
-        estimate: 9000,
-        price: 12,
-        __v: 0,
-      },
-      {
-        _id: "639c723c992482e5f2834bf5",
-        name: "Metallica in concert",
-        image: "https://i.postimg.cc/PrMJ0ZMc/Metallica-in-concert.jpg",
-        date: "2023-01-22",
-        description: "The only concert of the most emblematic band in the world.",
-        category: "Music Concert",
-        place: "Room A",
-        capacity: 138000,
-        estimate: 138000,
-        price: 150,
-        __v: 0,
-      },
-      {
-        _id: "639c723c992482e5f2834bf7",
-        name: "Electronic Fest",
-        image: "https://i.postimg.cc/KvsSK8cj/Electronic-Fest.jpg",
-        date: "2022-01-22",
-        description: "The best national and international DJs gathered in one place.",
-        category: "Music Concert",
-        place: "Room A",
-        capacity: 138000,
-        assistance: 110300,
-        price: 250,
-        __v: 0,
-      },
-      {
-        _id: "639c723d992482e5f2834bf9",
-        name: "10K for life",
-        image: "https://i.postimg.cc/fyLqZY9K/10-K-for-life.jpg",
-        date: "2022-03-01",
-        description: "Come and exercise, improve your health and lifestyle.",
-        category: "Race",
-        place: "Soccer field",
-        capacity: 30000,
-        assistance: 25698,
-        price: 3,
-        __v: 0,
-      },
-      {
-        _id: "639c723d992482e5f2834bfb",
-        name: "15K NY",
-        image: "https://i.postimg.cc/zv67r65z/15kny.jpg",
-        date: "2023-03-01",
-        description: "We'll be raising funds for hospitals and medical care in this unique event held in The Big Apple.",
-        category: "Race",
-        place: "New York",
-        capacity: 3000000,
-        price: 3,
-        __v: 0,
-        estimate: 2569800,
-      },
-      {
-        _id: "639c723d992482e5f2834bfd",
-        name: "School's book fair",
-        image: "https://i.postimg.cc/Sst763n6/book1.jpg",
-        date: "2023-10-15",
-        description: "Bring your unused school book and take the one you need.",
-        category: "Book Exchange",
-        place: "Room D1",
-        capacity: 150000,
-        estimate: 123286,
-        price: 1,
-        __v: 0,
-      },
-      {
-        _id: "639c723d992482e5f2834bff",
-        name: "Just for your kitchen",
-        image: "https://i.postimg.cc/05FhxHVK/book4.jpg",
-        date: "2022-11-09",
-        description: "If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.",
-        category: "Book Exchange",
-        place: "Room D6",
-        capacity: 130000,
-        assistance: 90000,
-        price: 100,
-        __v: 0,
-      },
-      {
-        _id: "639c723d992482e5f2834c01",
-        name: "Batman",
-        image: "https://i.postimg.cc/vH52y81C/cinema4.jpg",
-        date: "2022-3-11",
-        description: "Come see Batman fight crime in Gotham City.",
-        category: "Cinema",
-        place: "Room D1",
-        capacity: 11000,
-        assistance: 9300,
-        price: 225,
-        __v: 0,
-      },
-      {
-        _id: "639c723d992482e5f2834c03",
-        name: "Avengers",
-        image: "https://i.postimg.cc/T3C92KTN/scale.jpg",
-        date: "2023-10-15",
-        description: "Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
-        category: "Cinema",
-        place: "Room D1",
-        capacity: 9000,
-        estimate: 9000,
-        price: 250,
-        __v: 0,
-      },
-    ],
-  };
-  
- 
-  
-  const contenedor = document.getElementById("cards-container");
-  
-  for (let i = 0; i < data.events.length; i++) {
-          if(data.events[i].date >= data.currentDate){
-          let tarjeta = document.createElement("div");
-          tarjeta.className = "col-12 col-sm-6 col-md-4 col-lg-3 mb-4"; 
-          tarjeta.innerHTML = `
-            <div class="card h-100 m-1">
-              <img src="${data.events[i].image}" alt="${data.events[i].name}" class="card-img-top">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">${data.events[i].name}</h5>
-                <p class="card-text flex-grow-1">${data.events[i].description}</p>
-                <div class="d-flex justify-content-between align-items-center mt-auto">
-                  <p class="text-secondary mb-0">Precio: $${data.events[i].price}</p>
-                  <a href="./Details.html" class="btn btn-primary">Details</a>
-                </div>
-              </div>
+  currentDate: "2023-01-01",
+  events: [
+    {
+      _id: "639c723b992482e5f2834be9",
+      name: "Collectivities Party",
+      image: "https://i.postimg.cc/Fs03hQDt/Collectivities-Party.jpg",
+      date: "2022-12-12",
+      description: "Enjoy your favourite dishes, from different countries, in a unique event for the whole family.",
+      category: "Food Fair",
+      place: "Room A",
+      capacity: 45000,
+      assistance: 42756,
+      price: 5,
+      __v: 0,
+    },
+    {
+      _id: "639c723b992482e5f2834beb",
+      name: "Korean style",
+      image: "https://i.postimg.cc/ZmD3Xf57/Korean-style.jpg",
+      date: "2023-08-12",
+      description: "Enjoy the best Korean dishes, with international chefs and awesome events.",
+      category: "Food Fair",
+      place: "Room A",
+      capacity: 45000,
+      price: 10,
+      __v: 0,
+      estimate: 42756,
+    },
+    {
+      _id: "639c723c992482e5f2834bed",
+      name: "Jurassic Park",
+      image: "https://i.postimg.cc/GmHRkbNV/Jurassic-Park.jpg",
+      date: "2022-11-02",
+      description: "Let's go meet the biggest dinosaurs in the paleontology museum.",
+      category: "Museum",
+      place: "Field",
+      capacity: 82000,
+      price: 15,
+      __v: 0,
+      assistance: 65892,
+    },
+    {
+      _id: "639c723c992482e5f2834bef",
+      name: "Parisian Museum",
+      image: "https://i.postimg.cc/c4C2zXm8/Parisian-Museum.jpg",
+      date: "2023-11-02",
+      description: "A unique tour in the city of lights, get to know one of the most iconic places.",
+      category: "Museum",
+      place: "Paris",
+      capacity: 8200,
+      estimate: 8200,
+      price: 3500,
+      __v: 0,
+    },
+    {
+      _id: "639c723c992482e5f2834bf1",
+      name: "Comicon",
+      image: "https://i.postimg.cc/KYD0jMf2/comicon.jpg",
+      date: "2022-02-12",
+      description: "For comic lovers, all your favourite characters gathered in one place.",
+      category: "Costume Party",
+      place: "Room C",
+      capacity: 120000,
+      assistance: 110000,
+      price: 54,
+      __v: 0,
+    },
+    {
+      _id: "639c723c992482e5f2834bf3",
+      name: "Halloween Night",
+      image: "https://i.postimg.cc/RZ9fH4Pr/halloween.jpg",
+      date: "2023-02-12",
+      description: "Come with your scariest costume and win incredible prizes.",
+      category: "Costume Party",
+      place: "Room C",
+      capacity: 12000,
+      estimate: 9000,
+      price: 12,
+      __v: 0,
+    },
+    {
+      _id: "639c723c992482e5f2834bf5",
+      name: "Metallica in concert",
+      image: "https://i.postimg.cc/PrMJ0ZMc/Metallica-in-concert.jpg",
+      date: "2023-01-22",
+      description: "The only concert of the most emblematic band in the world.",
+      category: "Music Concert",
+      place: "Room A",
+      capacity: 138000,
+      estimate: 138000,
+      price: 150,
+      __v: 0,
+    },
+    {
+      _id: "639c723c992482e5f2834bf7",
+      name: "Electronic Fest",
+      image: "https://i.postimg.cc/KvsSK8cj/Electronic-Fest.jpg",
+      date: "2022-01-22",
+      description: "The best national and international DJs gathered in one place.",
+      category: "Music Concert",
+      place: "Room A",
+      capacity: 138000,
+      assistance: 110300,
+      price: 250,
+      __v: 0,
+    },
+    {
+      _id: "639c723d992482e5f2834bf9",
+      name: "10K for life",
+      image: "https://i.postimg.cc/fyLqZY9K/10-K-for-life.jpg",
+      date: "2022-03-01",
+      description: "Come and exercise, improve your health and lifestyle.",
+      category: "Race",
+      place: "Soccer field",
+      capacity: 30000,
+      assistance: 25698,
+      price: 3,
+      __v: 0,
+    },
+    {
+      _id: "639c723d992482e5f2834bfb",
+      name: "15K NY",
+      image: "https://i.postimg.cc/zv67r65z/15kny.jpg",
+      date: "2023-03-01",
+      description: "We'll be raising funds for hospitals and medical care in this unique event held in The Big Apple.",
+      category: "Race",
+      place: "New York",
+      capacity: 3000000,
+      price: 3,
+      __v: 0,
+      estimate: 2569800,
+    },
+    {
+      _id: "639c723d992482e5f2834bfd",
+      name: "School's book fair",
+      image: "https://i.postimg.cc/Sst763n6/book1.jpg",
+      date: "2023-10-15",
+      description: "Bring your unused school book and take the one you need.",
+      category: "Book Exchange",
+      place: "Room D1",
+      capacity: 150000,
+      estimate: 123286,
+      price: 1,
+      __v: 0,
+    },
+    {
+      _id: "639c723d992482e5f2834bff",
+      name: "Just for your kitchen",
+      image: "https://i.postimg.cc/05FhxHVK/book4.jpg",
+      date: "2022-11-09",
+      description: "If you're a gastronomy lover come get the cookbook that best suits your taste and your family's.",
+      category: "Book Exchange",
+      place: "Room D6",
+      capacity: 130000,
+      assistance: 90000,
+      price: 100,
+      __v: 0,
+    },
+    {
+      _id: "639c723d992482e5f2834c01",
+      name: "Batman",
+      image: "https://i.postimg.cc/vH52y81C/cinema4.jpg",
+      date: "2022-3-11",
+      description: "Come see Batman fight crime in Gotham City.",
+      category: "Cinema",
+      place: "Room D1",
+      capacity: 11000,
+      assistance: 9300,
+      price: 225,
+      __v: 0,
+    },
+    {
+      _id: "639c723d992482e5f2834c03",
+      name: "Avengers",
+      image: "https://i.postimg.cc/T3C92KTN/scale.jpg",
+      date: "2023-10-15",
+      description: "Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
+      category: "Cinema",
+      place: "Room D1",
+      capacity: 9000,
+      estimate: 9000,
+      price: 250,
+      __v: 0,
+    },
+  ],
+};
+
+
+const contenedor = document.getElementById("cards-container");
+const formContainer = document.getElementById("form-container");
+const mensaje = document.getElementById("mensaje");
+const formHTML = `
+    <div class="container-fluid">
+        <div class="row flex-wrap justify-content-between align-items-center p-2 p-md-4">
+            <div class="col-12 col-md-9 d-flex flex-wrap flex-md-row flex-column mb-3 mb-md-0">
+                ${['Food Fair', 'Museum', 'Costume Party', 'Music Concert', 'Race', 'Book Exchange', 'Cinema'].map(category =>
+                    `<div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="${category.replace(' ', '')}" value="${category}">
+                        <label class="form-check-label" for="${category.replace(' ', '')}">${category}</label>
+                    </div>`
+                ).join('')}
             </div>
-          `;
-          contenedor.appendChild(tarjeta);
-        }
-      }
-        
-        console.log(contenedor);
-  
-  
-  console.log(contenedor);
+            <div class="col-12 col-md-3">
+                <div class="input-group rounded-pill">
+                    <input class="form-control border-end-0 rounded-pill" type="search" placeholder="Buscar" id="search-input">
+                    <button class="btn btn-outline-secondary border-0 rounded-pill ms-n5" type="button">
+                        <i class="bi bi-search"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+
+formContainer.innerHTML = formHTML;
+
+const searchInput = document.getElementById("search-input");
+const checkboxes = document.querySelectorAll('.form-check-input');
+
+const createCard = (event) => `
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card h-100 m-1">
+            <img src="${event.image}" class="card-img-top" alt="${event.name}">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${event.name}</h5>
+                <p class="card-text flex-grow-1">${event.description}</p>
+                
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                    <p class="text-secondary mb-0">Price: $${event.price}</p>
+                    <a href="details.html?id=${event._id}" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+
+const renderCards = (events) => {
+    contenedor.innerHTML = "";
+    if (events.length === 0) {
+        mensaje.classList.add("visible");
+        mensaje.classList.remove("noVisible");
+    } else {
+        mensaje.classList.add("noVisible");
+        mensaje.classList.remove("visible");
+        const cardsHTML = events.map(event => createCard(event)).join('');
+        contenedor.innerHTML = cardsHTML;
+    }
+};
+
+const filterEvents = () => {
+    const searchText = searchInput.value.toLowerCase();
+    const selectedCategories = Array.from(checkboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+
+    const filteredEvents = data.events.filter(event => {
+        const isFutureEvent = new Date(event.date) > new Date(data.currentDate);
+        const matchesSearchText = event.name.toLowerCase().includes(searchText) || event.description.toLowerCase().includes(searchText);
+        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(event.category);
+
+        return isFutureEvent && matchesSearchText && matchesCategory;
+    });
+
+    renderCards(filteredEvents);
+};
+
+searchInput.addEventListener("input", filterEvents);
+checkboxes.forEach(checkbox => checkbox.addEventListener("change", filterEvents));
+
+filterEvents();

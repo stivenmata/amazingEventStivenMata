@@ -187,28 +187,87 @@ const data = {
   };
   
   const contenedor = document.getElementById("cards-container");
-  
-  for (let i = 0; i < data.events.length; i++) {
-          if(data.events[i].date <= data.currentDate){
-          let tarjeta = document.createElement("div");
-          tarjeta.className = "col-12 col-sm-6 col-md-4 col-lg-3 mb-4"; 
-          tarjeta.innerHTML = `
-            <div class="card h-100 m-1">
-              <img src="${data.events[i].image}" alt="${data.events[i].name}" class="card-img-top">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">${data.events[i].name}</h5>
-                <p class="card-text flex-grow-1">${data.events[i].description}</p>
-                <div class="d-flex justify-content-between align-items-center mt-auto">
-                  <p class="text-secondary mb-0">Precio: $${data.events[i].price}</p>
-                  <a href="./Details.html" class="btn btn-primary">Details</a>
-                </div>
-              </div>
+const formContainer = document.getElementById("form-container");
+const mensaje = document.getElementById("mensaje");
+
+const formHTML = `
+    <div class="container-fluid">
+        <div class="row flex-wrap justify-content-between align-items-center p-2 p-md-4">
+            <div class="col-12 col-md-9 d-flex flex-wrap flex-md-row flex-column mb-3 mb-md-0">
+                ${['Food Fair', 'Museum', 'Costume Party', 'Music Concert', 'Race', 'Book Exchange', 'Cinema'].map(category =>
+                    `<div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="${category.replace(' ', '')}" value="${category}">
+                        <label class="form-check-label" for="${category.replace(' ', '')}">${category}</label>
+                    </div>`
+                ).join('')}
             </div>
-          `;
-          contenedor.appendChild(tarjeta);
-        }
-      }
-        
-        console.log(contenedor);
-        
-    
+            <div class="col-12 col-md-3">
+                <div class="input-group rounded-pill">
+                    <input class="form-control border-end-0 rounded-pill" type="search" placeholder="Buscar" id="search-input">
+                    <button class="btn btn-outline-secondary border-0 rounded-pill ms-n5" type="button">
+                        <i class="bi bi-search"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+
+formContainer.innerHTML = formHTML;
+
+const searchInput = document.getElementById("search-input");
+const checkboxes = document.querySelectorAll('.form-check-input');
+
+const createCard = (event) => `
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card h-100 m-1">
+            <img src="${event.image}" class="card-img-top" alt="${event.name}">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${event.name}</h5>
+                <p class="card-text flex-grow-1">${event.description}</p>
+              
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                    <p class="text-secondary mb-0">Price: $${event.price}</p>
+                    <a href="details.html?id=${event._id}" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+
+const renderCards = (events) => {
+    contenedor.innerHTML = "";
+    if (events.length === 0) {
+        mensaje.classList.add("visible");
+        mensaje.classList.remove("noVisible");
+    } else {
+        mensaje.classList.add("noVisible");
+        mensaje.classList.remove("visible");
+        const cardsHTML = events.map(event => createCard(event)).join('');
+        contenedor.innerHTML = cardsHTML;
+    }
+};
+
+const filterEvents = () => {
+    const searchText = searchInput.value.toLowerCase();
+    const selectedCategories = Array.from(checkboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
+
+    const filteredEvents = data.events.filter(event => {
+        const matchesSearchText = event.name.toLowerCase().includes(searchText) || event.description.toLowerCase().includes(searchText);
+        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(event.category);
+        const isPastEvent = new Date(event.date) < new Date(data.currentDate);
+        return matchesSearchText && matchesCategory && isPastEvent;
+    });
+
+    renderCards(filteredEvents);
+};
+
+searchInput.addEventListener("input", filterEvents);
+checkboxes.forEach(checkbox => checkbox.addEventListener("change", filterEvents));
+
+filterEvents();
