@@ -213,7 +213,7 @@
         const currentDate = new Date(data.currentDate);
         const eventDate = new Date(event.date);
         const isPastEvent = eventDate < currentDate;
-      
+    
         document.getElementById('event-name').textContent = event.name;
         document.getElementById('event-image').src = event.image;
         document.getElementById('event-image').alt = event.name;
@@ -223,12 +223,20 @@
         document.getElementById('event-place').textContent = event.place;
         document.getElementById('event-capacity').textContent = event.capacity;
         document.getElementById('event-price').textContent = event.price;
-      
+    
         const assistanceContainer = document.getElementById('assistance-container');
+        const estimateContainer = document.getElementById('estimate-container');
+    
         if (isPastEvent && event.assistance) {
-          assistanceContainer.style.display = 'list-item';
-          document.getElementById('event-assistance').textContent = event.assistance;
+            assistanceContainer.style.display = 'list-item';
+            assistanceContainer.querySelector('span').textContent = event.assistance;
+            estimateContainer.style.display = 'none';
+        } else if (!isPastEvent && event.estimate) {
+            estimateContainer.style.display = 'list-item';
+            estimateContainer.querySelector('span').textContent = event.estimate;
+            assistanceContainer.style.display = 'none';
         } else {
-          assistanceContainer.style.display = 'none';
+            assistanceContainer.style.display = 'none';
+            estimateContainer.style.display = 'none';
         }
-      }
+    }
