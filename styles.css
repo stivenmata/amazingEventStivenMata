@@ -87,6 +87,10 @@
   display: none;
 }
 
+#assistance-container {
+  display: none;
+}
+
 #mensaje.visible {
   display: block;
 }

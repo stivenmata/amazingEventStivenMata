@@ -188,40 +188,47 @@
       };
     
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const eventId = urlParams.get('id');
-  
-      if (eventId) {
-          fetchEventDetails(eventId);
-      } else {
-          document.getElementById('event-details').innerHTML = '<p>No events found.</p>';
-      }
-  });
-  
-  function fetchEventDetails(eventId) {
+      document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventId = urlParams.get('id');
       
-      const event = data.events.find(event => event._id === eventId);
-  
-      if (event) {
+        if (eventId) {
+          fetchEventDetails(eventId);
+        } else {
+          document.getElementById('event-details').innerHTML = '<p>No events found.</p>';
+        }
+      });
+      
+      function fetchEventDetails(eventId) {
+        const event = data.events.find(event => event._id === eventId);
+      
+        if (event) {
           displayEventDetails(event);
-      } else {
+        } else {
           document.getElementById('event-details').innerHTML = '<p>Event not found.</p>';
+        }
       }
-  }
-  
-  
-  function displayEventDetails(event) {
-    document.getElementById('event-name').textContent = event.name;
-    document.getElementById('event-image').src = event.image;
-    document.getElementById('event-image').alt = event.name;
-    document.getElementById('event-date').textContent = event.date;
-    document.getElementById('event-description').textContent = event.description;
-    document.getElementById('event-category').textContent = event.category;
-    document.getElementById('event-place').textContent = event.place;
-    document.getElementById('event-capacity').textContent = event.capacity;
-    document.getElementById('event-assistance').textContent = event.assistance || 'N/A';
-    document.getElementById('event-price').textContent = event.price;
-    
-    document.getElementById('event-details').innerHTML = detailsHtml;
-  }
+      
+      function displayEventDetails(event) {
+        const currentDate = new Date(data.currentDate);
+        const eventDate = new Date(event.date);
+        const isPastEvent = eventDate < currentDate;
+      
+        document.getElementById('event-name').textContent = event.name;
+        document.getElementById('event-image').src = event.image;
+        document.getElementById('event-image').alt = event.name;
+        document.getElementById('event-date').textContent = event.date;
+        document.getElementById('event-description').textContent = event.description;
+        document.getElementById('event-category').textContent = event.category;
+        document.getElementById('event-place').textContent = event.place;
+        document.getElementById('event-capacity').textContent = event.capacity;
+        document.getElementById('event-price').textContent = event.price;
+      
+        const assistanceContainer = document.getElementById('assistance-container');
+        if (isPastEvent && event.assistance) {
+          assistanceContainer.style.display = 'list-item';
+          document.getElementById('event-assistance').textContent = event.assistance;
+        } else {
+          assistanceContainer.style.display = 'none';
+        }
+      }
