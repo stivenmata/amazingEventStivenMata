@@ -89,85 +89,51 @@
       </div>
 
      
-    <main>
-        <div class=" d-flex justify-content-center container-fluid">
+      <main>
+        <div class="d-flex justify-content-center container-fluid mt-4">
             <div class="row col-10">
-
                 <table class="table table-bordered border-dark">
-                    
-
-                        <thead>
-                            <tr class="table-secondary border-dark">
-                                <th colspan="3">Events Statistics</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr class="text-center">
-                                <td>Events with highest % of assitance</td>
-                            <td>Events with lowest % of assitance</td>
+                    <thead>
+                        <tr class="table-secondary border-dark">
+                            <th colspan="3" class="bg-warning">Events Statistics</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table1-body">
+                        <tr class="text-center">
+                            <td>Events with highest % of attendance</td>
+                            <td>Events with lowest % of attendance</td>
                             <td>Events with larger capacity</td>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-                        
-                        <tr class="table-secondary border-dark">
-                            <th colspan="3">Upcoming events statistics by category</th>
-                        </tr>
-                    
-                    
-                        <tr>
-                            <td>Categories</td>
-                            <td>Revenues</td>
-                            <td>Percentage of assitance</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-                    
-                        <tr class="table-secondary border-dark">
-                            <th colspan="3" >Past events statistcs by category</th>
-                        </tr>
-                    
-                        <tr>
-                            <td>Categories</td>
-                            <td>Revenues</td>
-                            <td>Percentage of assitance</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                        </tr>
-
-
-                        
-                    
                     </tbody>
-                
 
+                    <thead>
+                        <tr class="table-secondary border-dark">
+                            <th colspan="3" class="bg-warning">Upcoming events statistics by category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table2-body">
+                        <tr>
+                            <td>Categories</td>
+                            <td>Revenues</td>
+                            <td>Percentage of attendance</td>
+                        </tr>
+                    </tbody>
+
+                    <thead>
+                        <tr class="table-secondary border-dark">
+                            <th colspan="3" class="bg-warning">Past events statistics by category</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table3-body">
+                        <tr>
+                            <td>Categories</td>
+                            <td>Revenues</td>
+                            <td>Percentage of attendance</td>
+                        </tr>
+                    </tbody>
                 </table>
-
             </div>
         </div>
-
-
-
     </main>
 
 
@@ -201,10 +167,11 @@
           <h3 class="p-2 mb-0">COHORT</h3>
         </div>
       </footer>
-
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script type="module" src="./script/stats.js"></script>
 </body>
 
 </html>
